@@ -102,7 +102,7 @@ module.exports = function (options) {
                 // Determine the level of indentation
                 lines.forEach(function(line) {
                     if (line[0] === '<') return;
-                    var wsp = line.search(/\S/)
+                    var wsp = line.search(/\S|$/)
                     level = (level === null || (wsp < line.length && wsp < level)) ? wsp : level;
                 })
 
